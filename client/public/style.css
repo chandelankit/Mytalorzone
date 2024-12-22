@@ -12,6 +12,43 @@ html {
   line-height: 1.15; /* 1 */
   -webkit-text-size-adjust: 100%; /* 2 */
 }
+.scrolling-text--sections--23960050172198__scrolling_text_VnitmD {
+  --move-speed: 300s;
+}
+.scrollSale {
+  gap: 40px;
+}
+
+.scrolling-text {
+  overflow: hidden;
+  width: 100%; /* Ensure the container has a width */
+  position: relative; /* Ensure child elements can move */
+}
+
+.scrolling-text__inner {
+  animation: scrolling-text var(--move-speed) linear infinite;
+  animation-play-state: running;
+  display: inline-flex;
+  margin: 0.15em 0;
+  visibility: visible;
+  white-space: nowrap;
+  position: relative; /* Ensure the animation moves the entire content */
+}
+
+.scrolling-text__inner--left {
+  padding: 10px 0;
+  background: #8d605d;
+}
+
+/* Keyframes for scrolling animation */
+@keyframes scrolling-text {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
 
 /* Sections
    ========================================================================== */

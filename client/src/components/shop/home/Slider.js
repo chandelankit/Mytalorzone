@@ -17,10 +17,11 @@ const Slider = (props) => {
 
   return (
     <Fragment>
-      <div className="relative mt-16 bg-gray-100 border-2">
+      <div className="relative bg-gray-100 border-2 z-30" style={{marginTop:120}}>
         {data.sliderImages.length > 0 ? (
           <img
             className="w-full"
+            style={{ height: "600px" }}
             src={`${apiURL}/uploads/customize/${data.sliderImages[slide].slideImage}`}
             alt="sliderImage"
           />

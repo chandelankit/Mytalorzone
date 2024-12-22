@@ -13,6 +13,81 @@ const AdminNavber = (props) => {
 
   return (
     <Fragment>
+<div className="scrolling-text scrolling-text--sections--23960050172198__scrolling_text_VnitmD">
+  <div className="scrolling-text__inner scrolling-text__inner--left scrollScale" aria-hidden="true" tabIndex="0">
+    
+      <span>SALE   - UPTO 80% OFF + EXTRA 10% OFF ON PREPAID ORDERS</span>
+    
+      <span>SALE   - UPTO 80% OFF + EXTRA 10% OFF ON PREPAID ORDERS</span>
+    
+      <span>SALE   - UPTO 80% OFF + EXTRA 10% OFF ON PREPAID ORDERS</span>
+    
+      <span>SALE   - UPTO 80% OFF + EXTRA 10% OFF ON PREPAID ORDERS</span>
+    
+      <span>SALE   - UPTO 80% OFF + EXTRA 10% OFF ON PREPAID ORDERS</span>
+    
+      <span>SALE   - UPTO 80% OFF + EXTRA 10% OFF ON PREPAID ORDERS</span>
+    
+      <span>SALE   - UPTO 80% OFF + EXTRA 10% OFF ON PREPAID ORDERS</span>
+    
+      <span>SALE   - UPTO 80% OFF + EXTRA 10% OFF ON PREPAID ORDERS</span>
+    
+      <span>SALE   - UPTO 80% OFF + EXTRA 10% OFF ON PREPAID ORDERS</span>
+    
+      <span>SALE   - UPTO 80% OFF + EXTRA 10% OFF ON PREPAID ORDERS</span>
+    
+      <span>SALE   - UPTO 80% OFF + EXTRA 10% OFF ON PREPAID ORDERS</span>
+    
+      <span>SALE   - UPTO 80% OFF + EXTRA 10% OFF ON PREPAID ORDERS</span>
+    
+      <span>SALE   - UPTO 80% OFF + EXTRA 10% OFF ON PREPAID ORDERS</span>
+    
+      <span>SALE   - UPTO 80% OFF + EXTRA 10% OFF ON PREPAID ORDERS</span>
+    
+      <span>SALE   - UPTO 80% OFF + EXTRA 10% OFF ON PREPAID ORDERS</span>
+    
+      <span>SALE   - UPTO 80% OFF + EXTRA 10% OFF ON PREPAID ORDERS</span>
+    
+      <span>SALE   - UPTO 80% OFF + EXTRA 10% OFF ON PREPAID ORDERS</span>
+    
+      <span>SALE   - UPTO 80% OFF + EXTRA 10% OFF ON PREPAID ORDERS</span>
+    
+      <span>SALE   - UPTO 80% OFF + EXTRA 10% OFF ON PREPAID ORDERS</span>
+    
+      <span>SALE   - UPTO 80% OFF + EXTRA 10% OFF ON PREPAID ORDERS</span>
+    
+      <span>SALE   - UPTO 80% OFF + EXTRA 10% OFF ON PREPAID ORDERS</span>
+    
+      <span>SALE   - UPTO 80% OFF + EXTRA 10% OFF ON PREPAID ORDERS</span>
+    
+      <span>SALE   - UPTO 80% OFF + EXTRA 10% OFF ON PREPAID ORDERS</span>
+    
+      <span>SALE   - UPTO 80% OFF + EXTRA 10% OFF ON PREPAID ORDERS</span>
+    
+      <span>SALE   - UPTO 80% OFF + EXTRA 10% OFF ON PREPAID ORDERS</span>
+    
+      <span>SALE   - UPTO 80% OFF + EXTRA 10% OFF ON PREPAID ORDERS</span>
+    
+      <span>SALE   - UPTO 80% OFF + EXTRA 10% OFF ON PREPAID ORDERS</span>
+    
+      <span>SALE   - UPTO 80% OFF + EXTRA 10% OFF ON PREPAID ORDERS</span>
+    
+      <span>SALE   - UPTO 80% OFF + EXTRA 10% OFF ON PREPAID ORDERS</span>
+    
+      <span>SALE   - UPTO 80% OFF + EXTRA 10% OFF ON PREPAID ORDERS</span>
+    
+      <span>SALE   - UPTO 80% OFF + EXTRA 10% OFF ON PREPAID ORDERS</span>
+    
+      <span>SALE   - UPTO 80% OFF + EXTRA 10% OFF ON PREPAID ORDERS</span>
+    
+      <span>SALE   - UPTO 80% OFF + EXTRA 10% OFF ON PREPAID ORDERS</span>
+    
+      <span>SALE   - UPTO 80% OFF + EXTRA 10% OFF ON PREPAID ORDERS</span>
+    
+      <span>SALE   - UPTO 80% OFF + EXTRA 10% OFF ON PREPAID ORDERS</span>
+    
+  </div>
+</div>
       <nav className="sticky z-10 flex items-center shadow-md justify-between px-4 py-4 md:px-8 top-0 w-full bg-white">
         {/*  Large Screen Show  */}
         <div className="hidden lg:block lg:flex lg:items-center lg:space-x-4 mr-32">
