@@ -1,4 +1,5 @@
 const fs = require("fs");
+const path = require("path");
 const categoryModel = require("../models/categories");
 const productModel = require("../models/products");
 const orderModel = require("../models/orders");
@@ -8,69 +9,81 @@ const customizeModel = require("../models/customize");
 class Customize {
   async getImages(req, res) {
     try {
-      let Images = await customizeModel.find({});
-      if (Images) {
-        return res.json({ Images });
-      }
+      const images = await customizeModel.find({});
+      return res.json({ images });
     } catch (err) {
-      console.log(err);
+      console.error(err);
+      res.status(500).json({ error: "Error fetching images" });
     }
   }
 
   async uploadSlideImage(req, res) {
-    let image = req.file.filename;
+    const image = req.file?.filename;
     if (!image) {
-      return res.json({ error: "All field required" });
+      return res.status(400).json({ error: "Image is required" });
     }
+
     try {
-      let newCustomzie = new customizeModel({
-        slideImage: image,
-      });
-      let save = await newCustomzie.save();
-      if (save) {
-        return res.json({ success: "Image upload successfully" });
-      }
+      const newCustomize = new customizeModel({ slideImage: image });
+      await newCustomize.save();
+      return res.json({ success: "Image uploaded successfully" });
     } catch (err) {
-      console.log(err);
+      console.error(err);
+      res.status(500).json({ error: "Error uploading image" });
     }
   }
 
   async deleteSlideImage(req, res) {
-    let { id } = req.body;
-    if (!id) {
-      return res.json({ error: "All field required" });
-    } else {
-      try {
-        let deletedSlideImage = await customizeModel.findById(id);
-        const filePath = `../server/public/uploads/customize/${deletedSlideImage.slideImage}`;
+    const { id } = req.body;
 
-        let deleteImage = await customizeModel.findByIdAndDelete(id);
-        if (deleteImage) {
-          // Delete Image from uploads -> customizes folder
-          fs.unlink(filePath, (err) => {
-            if (err) {
-              console.log(err);
-            }
-            return res.json({ success: "Image deleted successfully" });
-          });
-        }
-      } catch (err) {
-        console.log(err);
+    if (!id) {
+      return res.status(400).json({ error: "ID is required" });
+    }
+
+    try {
+      const imageToDelete = await customizeModel.findById(id);
+      if (!imageToDelete) {
+        return res.status(404).json({ error: "Image not found" });
       }
+
+      const filePath = path.join(
+        __dirname,
+        "../public/uploads/customize",
+        imageToDelete.slideImage
+      );
+
+      // Delete the document from the database
+      await customizeModel.findByIdAndDelete(id);
+
+      // Delete the file from the server
+      fs.unlink(filePath, (err) => {
+        if (err) {
+          console.error("Error deleting file:", err.message);
+          return res
+            .status(500)
+            .json({ error: "File deletion failed, but record removed" });
+        }
+        return res.json({ success: "Image deleted successfully" });
+      });
+    } catch (err) {
+      console.error(err);
+      res.status(500).json({ error: "Error deleting image" });
     }
   }
 
   async getAllData(req, res) {
     try {
-      let Categories = await categoryModel.find({}).count();
-      let Products = await productModel.find({}).count();
-      let Orders = await orderModel.find({}).count();
-      let Users = await userModel.find({}).count();
-      if (Categories && Products && Orders) {
-        return res.json({ Categories, Products, Orders, Users });
-      }
+      const [categories, products, orders, users] = await Promise.all([
+        categoryModel.countDocuments(),
+        productModel.countDocuments(),
+        orderModel.countDocuments(),
+        userModel.countDocuments(),
+      ]);
+
+      return res.json({ categories, products, orders, users });
     } catch (err) {
-      console.log(err);
+      console.error(err);
+      res.status(500).json({ error: "Error fetching data" });
     }
   }
 }
