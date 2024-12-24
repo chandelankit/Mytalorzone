@@ -1,23 +1,27 @@
 const fs = require("fs");
-const path = require("path");
 
-const uploadFolders = ["categories", "customize", "products"];
+const categoriesFolder = "./public/uploads/categories";
+const customizeFolder = "./public/uploads/customize";
+const productsFolder = "./public/uploads/products";
 
 const CreateAllFolder = () => {
-  const baseDir = path.join(__dirname, "../public/uploads");
-
-  if (!fs.existsSync(baseDir)) {
-    fs.mkdirSync(baseDir, { recursive: true });
-    console.log("Base upload directory created:", baseDir);
+  if (!fs.existsSync(categoriesFolder)) {
+    fs.mkdirSync(categoriesFolder, {
+      recursive: true,
+    });
   }
 
-  uploadFolders.forEach((folder) => {
-    const folderPath = path.join(baseDir, folder);
-    if (!fs.existsSync(folderPath)) {
-      fs.mkdirSync(folderPath);
-      console.log(`Folder created: ${folderPath}`);
-    }
-  });
+  if (!fs.existsSync(customizeFolder)) {
+    fs.mkdirSync(customizeFolder, {
+      recursive: true,
+    });
+  }
+
+  if (!fs.existsSync(productsFolder)) {
+    fs.mkdirSync(productsFolder, {
+      recursive: true,
+    });
+  }
 };
 
 module.exports = CreateAllFolder;
