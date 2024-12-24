@@ -41,11 +41,7 @@ CreateAllFolder();
 
 // Database Connection
 mongoose
-  .connect("mongodb+srv://ankitlucky10161:as123456@cluster0.o6rjb.mongodb.net/<database-name>?retryWrites=true&w=majority"
-    , {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
+  .connect("mongodb+srv://ankitlucky10161:as123456@cluster0.o6rjb.mongodb.net/<database-name>?retryWrites=true&w=majority")
   .then(() =>
     console.log(
       "==============Mongodb Database Connected Successfully=============="
